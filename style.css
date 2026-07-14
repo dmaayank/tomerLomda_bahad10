@@ -1,0 +1,734 @@
+@font-face {
+    font-family: 'heebo-bold';
+    src: url('assets/fonts/Heebo-Bold.ttf')
+}
+
+@font-face {
+    font-family: 'heebo-medium';
+    src: url('assets/fonts/Heebo-Medium.ttf')
+}
+
+@font-face {
+    font-family: 'heebo-regular';
+    src: url('assets/fonts/Heebo-Regular.ttf')
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: #F4F4F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'heebo-regular';
+}
+
+/* lomda upper bar */
+.upper_bar {
+    width: 100%;
+    height: 8vh;
+    position: absolute;
+    background-color: #869B7E;
+    top: 0;
+}
+
+#lomda_title {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    margin: 0;
+    font-family: 'heebo-bold';
+
+}
+
+.upperBar_logo {
+    width: 12vw;
+    height: 6vh;
+}
+
+.symbol_row {
+    display: flex;
+    position: absolute;
+    top: 10%;
+    left: 2%;
+}
+
+/* progress bar */
+
+.progress_bar {
+    top: 8vh;
+    position: relative;
+    width: 100%;
+    z-index: 200;
+    height: 7vh;
+    display: none;
+    background-color: #C9CAAC;
+}
+
+.container {
+    margin: auto;
+    width: 400px;
+    text-align: center;
+    direction: rtl;
+}
+
+.container .progress {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.progress {
+    direction: rtl;
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+    height: 16px;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+    -webkit-transition: 0.4s linear;
+    -moz-transition: 0.4s linear;
+    -o-transition: 0.4s linear;
+    transition: 0.4s linear;
+    -webkit-transition-property: width, background-color;
+    -moz-transition-property: width, background-color;
+    -o-transition-property: width, background-color;
+    transition-property: width, background-color;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/*
+ * Note: using adjacent or general sibling selectors combined with
+ *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+ *       See this article for more info and a potential fix:
+ *       https://css-tricks.com/webkit-sibling-bug/
+ */
+
+#five:checked~.progress>.progress-bar {
+    width: 5%;
+    background-color: #f63a0f;
+}
+
+#twentyfive:checked~.progress>.progress-bar {
+    width: 25%;
+    background-color: #f27011;
+}
+
+#fifty:checked~.progress>.progress-bar {
+    width: 50%;
+    background-color: #f2b01e;
+}
+
+#seventyfive:checked~.progress>.progress-bar {
+    width: 75%;
+    background-color: #f2d31b;
+}
+
+#onehundred:checked~.progress>.progress-bar {
+    width: 100%;
+    background-color: #86e01e;
+}
+
+.radio {
+    display: none;
+}
+
+.label {
+    font-family: 'heebo-bold';
+    display: inline-block;
+    margin: 0;
+    padding: 3px 17px;
+    color: #000000;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.6rem;
+}
+
+.radio:checked+.label {
+    color: white;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+#five {
+    padding: 3px 0px;
+}
+
+#onehundred {
+    padding: 3px 0px;
+}
+
+/* beginning animation */
+svg {
+    height: 70%;
+    width: 70%;
+    display: block;
+}
+
+
+.opening_sentence {
+    direction: rtl;
+    font-size: 1.5rem;
+}
+
+.opening_animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* topics page */
+.topics_page {
+    display: none;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.topics {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    top: 30vh;
+    align-items: center;
+}
+
+.icon {
+    width: 8vw;
+    height: 4vh;
+    position: absolute;
+    margin-left: 5vw;
+    right: 4%;
+}
+
+.topic {
+    background-color: #C9CAAC;
+    border: #869B7E solid 3px;
+    border-radius: 75px;
+    width: 85%;
+    height: 7vh;
+    gap: 10px;
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 4px 4px 5px rgb(161, 161, 161);
+    margin: 2px auto;
+    /* Centering them nicely in their container */
+
+    /* --- Animation Fixes --- */
+    opacity: 0;
+    /* Start completely invisible */
+    animation-name: slideInUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    /* Keeps the final state (opacity: 1) when done */
+}
+
+/* Delays */
+#topic1 {
+    animation-delay: 0s;
+}
+
+#topic2 {
+    animation-delay: 0.3s;
+}
+
+#topic3 {
+    animation-delay: 0.6s;
+}
+
+#topic4 {
+    animation-delay: 0.9s;
+}
+
+#topic5 {
+    animation-delay: 1.2s;
+}
+
+#start_button {
+    animation-delay: 1.5s;
+}
+
+
+.topic_name {
+    text-align: center;
+    margin-right: 10vw;
+    font-size: 1.5rem;
+}
+
+.button {
+    text-align: center;
+    position: absolute;
+    width: 40vw;
+    height: 5vh;
+    border: #840000 solid 3px;
+    border-radius: 100px;
+    color: #BA0000;
+    font-size: 2rem;
+    z-index: 100;
+    font-family: 'heebo-bold';
+    background: radial-gradient(#FFFFFF, #EACDCD);
+    bottom: 3vh;
+    left: 27%;
+    box-shadow: 4px 4px 5px rgb(161, 161, 161);
+    opacity: 0;
+
+    /* Added box-shadow to the transition list */
+    transition: scale 0.1s ease-out, box-shadow 0.1s ease-out, background-color 0.1s ease-out;
+    /* Mobile Optimizations */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+
+    /* Slide in animation */
+    animation-name: slideInUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
+}
+
+/* Pressed state animation */
+.button:active {
+    /* Use the individual CSS scale property instead of transform: scale() */
+    scale: 0.95;
+
+    box-shadow: 4px 4px 5px rgb(161, 161, 161);
+    background: radial-gradient(#FFFFFF, #EACDCD);
+
+    /* Faster transition into the press */
+    transition: scale 0.05s ease-in, box-shadow 0.05s ease-in;
+}
+
+.title {
+    position: absolute;
+    padding: 0px 50px;
+    top: 12%;
+    font-family: 'heebo-bold';
+    font-size: 2.5rem;
+    color: #AA3A3A;
+    text-align: center;
+}
+
+#title_text {
+    direction: rtl;
+    position: relative;
+    font-size: 2rem;
+    top: 25vh;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        /* 30px is a bit subtler and smoother than 100% */
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* pharmacy israel page */
+/* ========================================================= */
+/* 1. Page and Layout Controls                               */
+/* ========================================================= */
+
+.pharmacy_page {
+    display: none;
+    /* Controlled by JS: set to "block" when entering this page */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#to-practice-btn {
+    display: none;
+    /* Controlled by JS: set to "block" when entering this page */
+}
+
+/* ========================================================= */
+/* 2. Map Viewport and Container                             */
+/* ========================================================= */
+
+.map-viewport {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 1;
+    /* Keeps the entire viewport layer manageable */
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* 0.8s makes the transition look smooth and app-like */
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-origin: center center;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Or whatever height fits your design */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 27vh;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    border: none;
+}
+
+
+
+
+/* ========================================================= */
+/* 3. Map Layer Stacking & Cross-Fade                         */
+/* ========================================================= */
+
+.israel-layer {
+    position: absolute;
+    top: 25%;
+    /* Changed from 3vh to 0 to keep the map centered inside the viewport box */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 75%;
+    /* Explicit height constraint forces it to respect object-fit containment */
+    object-fit: contain;
+
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+}
+
+/* The visible map layer */
+.israel-layer.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* #full_israel {
+    display: none;
+} 
+
+#north_israel {
+    display: none;
+}
+
+#center_israel {
+    display: none;
+}
+
+#south_israel {
+    display: none;
+} */
+
+
+/* ========================================================= */
+/* 4. Interactive Map Pins & Pulse Animation                 */
+/* ========================================================= */
+
+.map-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 10;
+    /* Raises the pin above standard image layers */
+    top: 35%;
+    left: 55%;
+}
+
+/* The actual clickable marker */
+.pin {
+    width: 14px;
+    height: 14px;
+    background-color: #1e3a8a;
+    /* Dark Blue from your image */
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+/* The expanding radar ring */
+.pulse-ring {
+    position: absolute;
+    width: 100px;
+    /* Max size of the ring */
+    height: 100px;
+    border: 2px solid rgba(30, 58, 138, 0.6);
+    /* Semi-transparent blue */
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    display: block;
+
+    /* Loop the pulse animation */
+    animation: radar-pulse 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+}
+
+@keyframes radar-pulse {
+    0% {
+        transform: scale(0.1);
+        opacity: 0.9;
+    }
+
+    80% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(1.5);
+        /* Expands outward */
+        opacity: 0;
+        /* Fades out */
+    }
+}
+
+/* ========================================================= */
+/* 5. Dynamic Zoom Classes                                   */
+/* ========================================================= */
+
+/* Zoom into the North region */
+.map-container.zoom-north {
+    transform: scale(2.2) translateY(15%) translateX(-7%);
+}
+
+/* Zoom into the Center region */
+.map-container.zoom-center {
+    transform: scale(2.0) translateY(5%) translateX(0%);
+}
+
+/* Zoom into the South region */
+.map-container.zoom-south {
+    transform: scale(1.8) translateY(-20%) translateX(2%);
+}
+
+/* ========================================================= */
+/* Location Card Styles                                      */
+/* ========================================================= */
+.location-card {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 7vh;
+    display: none;
+
+    height: 38vh;
+    background: #d9edf2;
+
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, .2);
+
+    transform: translateY(100%);
+    transition: bottom 0.5s ease, opacity 0.5s ease;
+
+    z-index: 100;
+}
+
+/* When this active modifier class is appended by JS, the drawer slides upward */
+.location-card.open {
+    bottom: 250px;
+    opacity: 1;
+
+}
+
+/* Card layout spacing decorations */
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(134, 155, 126, 0.3);
+}
+
+.chevron-icon {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 2px;
+    --rotation: 180deg;
+    animation: bounce 2s infinite;
+    /* Subtle continuous physical bounce hint */
+
+}
+
+.location-card.open .chevron-icon {
+    --rotation: 0deg;
+}
+
+
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-family: 'heebo-bold', sans-serif;
+    color: #333;
+}
+
+.card-content {
+    padding: 15px;
+    overflow-y: auto;
+    direction: rtl;
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    padding: 12px 15px;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.location-item p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* Bouncing animation indicator cue for users */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: rotate(var(--rotation)) translateY(0);
+    }
+
+    50% {
+        transform: rotate(var(--rotation)) translateY(-3px);
+        /* Adjust bounce height here */
+    }
+}
+
+.popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .4);
+    /* optional dark overlay */
+    z-index: 9999;
+}
+
+.pop-up-card {
+    direction: rtl;
+    text-align: center;
+    width: 70vw;
+    max-width: 450px;
+    background: #FFF7F0;
+    border: #92745a 2px solid;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.popup .button {
+    /* override the global .button absolute positioning */
+    position: static;
+    width: auto;
+    height: auto;
+
+    min-width: 180px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: #840000 solid 3px;
+
+
+    /* optional: ensure flex sizing behaves predictably */
+    flex: 0 0 auto;
+}
+
+
+.button-row {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* prevents overflow on small screens */
+}
+
+/* exercise page */
+.exercise-page {
+    display: none;
+    text-align: center;
+
+}
+
+.exercise-page p {
+    font-size: 2rem;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    direction: rtl;
+}
+
+.exercise-page .button-row {
+    gap: 10px;
+}
+
+.exercise-page .button {
+    position: static;
+    width: auto;
+    height: auto;
+
+    min-width: 180px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border: #840000 solid 3px;
+
+
+    /* optional: ensure flex sizing behaves predictably */
+    flex: 0 0 auto;
+}
