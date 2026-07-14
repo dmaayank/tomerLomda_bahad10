@@ -4,9 +4,10 @@ let region;
 window.addEventListener('load', (event) => {
 
     // set beginning animation and topics page
+    // Make the beginning intro start right away (no long delay)
     setTimeout(() => {
         document.getElementById('opening_animation').style.display = "none";
-        document.getElementById('topics_page').style.display = "block"
+        document.getElementById('topics_page').style.display = "flex";
         document.getElementById('start_button').addEventListener('click', pharmacyPage);
 
     }, 5000);
